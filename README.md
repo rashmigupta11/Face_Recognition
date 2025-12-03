@@ -15,8 +15,6 @@ enhanced with real-time inference, webcam integration, and modular structure.
   <li>Supports webcam and video input</li>
   <li>Generates facial embeddings from training images</li>
   <li>Flask-based dashboard for live streaming</li>
-  <li>Modular and clean code architecture</li>
-  <li>Easily extendable for multi-camera systems</li>
 </ul>
 
 <h2>3. Project Architecture</h2>
@@ -58,9 +56,8 @@ Multi-Person-Face-Recognition/
 │   └── index.html
 │
 ├── static/
-│   ├── css/
 │   │   └── styles.css
-│   └── images/
+│   └── image/
 │
 ├── requirements.txt
 ├── README.md
@@ -86,15 +83,60 @@ source myenv/bin/activate
 pip install -r requirements.txt
 </pre>
 
-<h2>7. How It Works</h2>
+<h2>How It Works</h2>
 
-<h3>Generating Embeddings</h3>
-<ol>
-  <li>Add images of each person inside separate folders in the dataset directory.</li>
-  <li>Run the embedding script to generate encodings.</li>
-</ol>
+<h3>Step 1: Prepare Dataset</h3>
+<p>
+Create a folder named <code>dataset</code> and place subfolders for each person you want to recognize. 
+Each subfolder should contain multiple images of that person. The subfolder name automatically becomes the label.
+</p>
+
+<pre>
+dataset/
+   Person1/
+       img1.jpg
+       img2.jpg
+   Person2/
+       img1.jpg
+       img2.jpg
+</pre>
+
+<h3>Step 2: Generate Encodings</h3>
+<p>
+Run the embedding script to generate facial encodings. This script reads all images from the dataset, 
+extracts 128-dimensional facial embeddings using dlib, and stores them in a serialized file.
+</p>
+
 <pre>
 python3 src/dlib_face_embeddings.py
 </pre>
 
-<h3>Real-Time
+<p>
+This script generates a file named:
+</p>
+
+<pre>
+face_encodings.pkl
+</pre>
+
+<p>
+This file contains all facial embeddings and labels used for recognition.
+</p>
+
+<h3>Step 3: Real-Time Recognition</h3>
+<p>
+Start the Flask application to begin real-time face recognition from the webcam or video feed.
+</p>
+
+<pre>
+cd src
+python3 app.py
+</pre>
+
+<h3>Step 4: Access Through Browser</h3>
+<p>You can access the real-time video streams using the URLs below:</p>
+
+<ul>
+  <li><strong>Processed Recognition Feed:</strong> http://127.0.0.1:5000/video_processed</li>
+
+</ul>
