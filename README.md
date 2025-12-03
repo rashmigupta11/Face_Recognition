@@ -57,7 +57,7 @@ Multi-Person-Face-Recognition/
 │
 ├── static/
 │   │   └── styles.css
-│   └── image/
+│   └── live_flask_server.png/
 │
 ├── requirements.txt
 ├── README.md
@@ -143,7 +143,7 @@ It demonstrates how the processed video stream appears in the browser when the s
 </p>
 
 <pre>
-<img src="static/images/live_flask_server.png" alt="Live Flask Server Output" width="600">
+<img src="static/live_flask_server.png" alt="Live Flask Server Output" width="600">
 </pre>
 
 
