@@ -135,6 +135,7 @@ python3 app.py
 
 <h3>Step 4: Access Through Browser</h3>
 <p>You can access the real-time video streams using the URLs below:</p>
+  <li><strong>Processed Recognition Feed:</strong> http://127.0.0.1:5000/</li>
 
 <h3>Step 5: Screenshot of the Live Flask Server</h3>
 <p>
