@@ -1,0 +1,26 @@
+# Virtual environment
+myenv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data files
+*.csv
+*.pkl
+*.log
+data/
+logs/
+
+# Video files
+*.mp4
+*.avi
+
+# OS files
+.DS_Store
+
+# Large images or training datasets
+dataset/
+data
